@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Studi & Akreditasi - FMIPA UNTAN</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        .prodi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .prodi-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--dark-blue);
+        }
+        .prodi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow-medium);
+        }
+        .prodi-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+        .akreditasi-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .akreditasi-badge.A { background-color: #4CAF50; color: white; } /* Hijau */
+        .akreditasi-badge.B { background-color: #2196F3; color: white; } /* Biru */
+        .akreditasi-badge.Baik { background-color: var(--primary-yellow); color: var(--dark-blue); } 
+        .prodi-card .btn-secondary {
+            margin-top: 15px;
+            background-color: var(--primary-yellow);
+            color: var(--dark-blue);
+            font-size: 0.9em;
+            padding: 8px 15px;
+        }
+        .prodi-card .btn-secondary:hover {
+            background-color: var(--secondary-yellow);
+        }
+        /* Responsif untuk Prodi Card */
+        @media (max-width: 600px) {
+            .prodi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top-banner">
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Beranda</a></li>
+                <li><a href="tentang-kami.html" class="nav-item">Tentang Kami</a></li>
+                <li class="dropdown-toggle">
+                    <a href="#" class="nav-item active">Prodi</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        
+        <section id="prodi-list" class="content-section light-grey-bg section-padded">
+            <div class="container">
+                <h2 class="section-title">Program Studi & Akreditasi</h2>
+                
+                <div class="prodi-grid">
+                    
+                    <div class="prodi-card" id="matematika">
+                        <h3>Matematika (S1)</h3>
+                        <p>Akreditasi: <span class="akreditasi-badge A">A</span></p>
+                        <p>Fokus pada Analisis Data, Statistika, dan Matematika Komputasi.</p>
+                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                    </div>
+                    
+                    <div class="prodi-card" id="fisika">
+                        <h3>Fisika (S1)</h3>
+                        <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                        <p>Spesialisasi di bidang Geofisika, Material, dan Instrumentasi Elektronika.</p>
+                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                    </div>
+                    
+                    <div class="prodi-card" id="kimia">
+                        <h3>Kimia (S1)</h3>
+                        <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                        <p>Mempelajari Kimia Analitik, Organik, dan bidang Kimia Lingkungan.</p>
+                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                    </div>
+                    
+                    <div class="prodi-card" id="biologi">
+                        <h3>Biologi (S1)</h3>
+                        <p>Akreditasi: <span class="akreditasi-badge Baik">Baik Sekali</span></p>
+                        <p>Fokus pada Konservasi Sumber Daya Hayati dan Biologi Molekuler.</p>
+                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                    </div>
+                    
+                    <div class="prodi-card" id="farmasi">
+                        <h3>Farmasi (S1)</h3>
+                        <p>Akreditasi: <span class="akreditasi-badge A">A</span></p>
+                        <p>Persiapan karir di industri farmasi, klinik, dan penelitian obat.</p>
+                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                    </div>
+                    
+                    <div class="prodi-card">
+                        <h3>Magister Biologi (S2)</h3>
+                        <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                        <p>Program lanjutan di bidang Keanekaragaman Hayati Tropis.</p>
+                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer id="main-footer" class="content-section">
+        <div class="container footer-grid">
+            
+            <div class="footer-col about-fmipa">
+                <h4>FMIPA UNTAN</h4>
+                <p>Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
+                <p>Kampus Universitas Tanjungpura</p>
+                <p>Jalan Prof. H. Anwar, Pontianak, 78124, Indonesia</p>
+            </div>
+            
+            <div class="footer-col quick-links">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="#">Pendaftaran Mahasiswa</a></li>
+                    <li><a href="#">Pusat Penelitian</a></li>
+                    <li><a href="#">Jurnal Ilmiah</a></li>
+                    <li><a href="#">Peta Kampus</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-info">
+                <h4>Hubungi Kami</h4>
+                <p>Email: dekanat@mipa.untan.ac.id</p>
+                <p>Telp: (0561) 740123</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 FMIPA Universitas Tanjungpura. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
