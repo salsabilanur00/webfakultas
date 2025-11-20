@@ -59,7 +59,9 @@ a {
 
 .section-title {
     text-align: center;
-    margin-bottom: -100px;
+    /* KUNCI PERBAIKAN: Turunkan margin negatif agar judul naik ke atas konten */
+    margin-bottom: 30px; 
+    padding-top: 0; /* Pastikan tidak ada padding atas yang tidak perlu */
 }
 
 .section-title::after {
@@ -104,148 +106,197 @@ a {
 }
 
 /* ---------------------------------------------------------------- */
-/* --- 1. Header/Banner Paling Atas --- */
+/* --- HERO BANNER --- */
 /* ---------------------------------------------------------------- */
-#top-banner {
-    /* Sesuaikan URL gambar Anda di sini */
-    background: url('MIPA.png') no-repeat center bottom / cover; 
-    min-height: 110px; 
+#full-hero-banner {
+    background: url('https://mipa.untan.ac.id/file/sejarah/e31f106634b62687c180d767b0f7ec48Galeri-Mipa-3.jpg') no-repeat center center/cover;
+    min-height: 600px; 
     position: relative;
     overflow: hidden;
-    z-index: 999; 
+    color: white;
 }
 
-#top-banner::after {
+#full-hero-banner::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.15); 
+    background: linear-gradient(to bottom, rgba(0, 51, 102, 0.75), rgba(0, 51, 102, 0.2)); 
     z-index: 1;
 }
 
-.banner-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: flex-end; 
-    justify-content: flex-start; 
-    height: 400px; 
-    padding: 0 5% 20px 5%; 
+.navbar-top-overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; 
+    padding: 15px 0;
 }
 
-.logo-slogan-box {
+.navbar-overlay-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo-overlay {
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.9); 
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px var(--shadow-medium);
-}
-
-.logo-slogan-box img {
-    width: 60px; 
-    height: 60px;
-    margin-right: 15px;
-}
-
-.slogan-text h4 {
-    margin: 0;
-    color: var(--dark-blue);
-    font-size: 1.1em;
+    font-size: 1.5em; 
     font-weight: 700;
+    width: auto;
+    justify-content: flex-start; 
+    flex-shrink: 0;
 }
-
-.slogan-text p {
-    margin: 0;
-    color: #666;
-    font-size: 0.9em;
-}
-
-/* ---------------------------------------------------------------- */
-/* --- 2. Navigasi Utama --- */
-/* ---------------------------------------------------------------- */
-.navbar {
-    background-color: white;
-    border-bottom: 2px solid var(--medium-grey);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end; /* Mengatur navigasi ke kanan */
-    align-items: stretch;
-}
-
-.nav-links > li {
-    position: relative;
-    height: 100%;
-}
-
-.nav-item {
-    display: block;
-    padding: 15px 20px;
-    color: var(--dark-blue);
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-item:hover, .nav-item.active {
-    background-color: var(--primary-yellow);
+.logo-text {
+    margin-left: 8px;
     color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
 }
 
-.dropdown-menu {
-    display: none;
+.nav-links-overlay {
+    list-style: none; 
+    display: flex;
+    padding: 0;
+    margin: 0; 
+    gap: 25px;
+    flex-grow: 1;
+    justify-content: center;
+}
+.nav-links-overlay a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links-overlay a:hover,
+.nav-links-overlay a.active {
+    color: var(--primary-yellow);
+}
+
+.nav-links-overlay a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-yellow);
     position: absolute;
-    top: 100%;
+    bottom: -5px;
     left: 0;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    min-width: 200px;
-    z-index: 1000;
 }
 
-.dropdown-toggle:hover .dropdown-menu {
-    display: block;
+.utility-icons-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    flex-shrink: 0; 
 }
 
-.dropdown-menu li a {
-    padding: 10px 20px;
-    display: block;
-    color: var(--dark-blue);
+.utility-icons-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-.dropdown-menu li a:hover {
-    background-color: var(--light-grey);
+.utility-icons-right a:hover {
+    color: var(--primary-yellow);
 }
 
+.utility-icons-right .separator {
+    color: rgba(255, 255, 255, 0.5); 
+    font-size: 1.2em;
+}
+
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    padding-top: 180px; 
+    padding-bottom: 50px;
+    text-align: left;
+}
+
+.hero-text {
+    max-width: 800px; 
+}
+
+.welcome-greeting {
+    font-size: 1.8em; 
+    font-weight: 500;
+    color: white; 
+    margin-bottom: 0px; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text h1 {
+    font-size: 3.2em; 
+    font-weight: 700;
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    line-height: 1.2;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text h2 {
+    font-size: 2em; 
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 30px; 
+    line-height: 1.2;
+    color: var(--primary-yellow); 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text p,
+.hero-buttons,
+.btn-contact-overlay {
+    display: none !important; 
+}
+
+.after-hero-line {
+    width: 100%;
+    height: 25px; 
+    background-color: var(--dark-blue); 
+    border-top: 2px solid var(--primary-yellow); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+    position: relative;
+    z-index: 5; 
+}
 
 /* ---------------------------------------------------------------- */
-/* --- 3. Sambutan Dekan (Gaya Kreatif & Menyatu) --- */
+/* --- SAMBUTAN DEKAN (UM Surabaya Style) --- */
 /* ---------------------------------------------------------------- */
 
 .sambutan-container.um-surabaya-style {
     display: flex;
     flex-direction: row; 
-    gap: 0; /* Hapus gap agar foto dan teks bisa tumpang tindih */
+    gap: 0; 
     align-items: center; 
     position: relative;
     padding: 0; 
+    /* Tambahkan margin atas untuk memberi ruang dari section title yang dinaikkan */
+    margin-top: 30px; 
 }
 
-/* KOTAK TEKS KIRI (dengan gradasi) */
 .sambutan-text-um {
-    flex-basis: 80%; /* Beri ruang yang lebih besar untuk teks */
-    padding: 50px 40px 50px 50px; /* Padding lebih besar */
+    flex-basis: 80%; 
+    padding: 50px 40px 50px 50px; 
     background: linear-gradient(to right, var(--primary-yellow), white); 
     z-index: 10;
-    box-shadow: 0 8px 30px var(--shadow-medium); /* Shadow lebih menonjol */
-    border-radius: 15px; /* Radius lebih halus */
+    box-shadow: 0 8px 30px var(--shadow-medium); 
+    border-radius: 15px; 
 }
 
 .sambutan-text-um p {
@@ -259,7 +310,7 @@ a {
 .dekan-info-bottom {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 2px solid rgba(0, 51, 102, 0.1); /* Border lebih transparan */
+    border-top: 2px solid rgba(0, 51, 102, 0.1); 
 }
 
 .dekan-info-bottom p {
@@ -277,11 +328,10 @@ a {
     text-underline-offset: 4px;
 }
 
-/* KOTAK GAMBAR KANAN (DIINTEGRASIKAN) */
 .dekan-photo-box-um {
     flex-basis: 20%; 
-    max-width: 300px; /* Lebar foto sedikit lebih besar */
-    height: 350px; /* Tinggi foto sedikit lebih tinggi */
+    max-width: 300px; 
+    height: 200px; 
     overflow: hidden; 
     z-index: 11; 
     background: none; 
@@ -289,62 +339,34 @@ a {
     display: flex; 
     align-items: center;
     justify-content: center;
-    /* Margin negatif yang lebih besar untuk tumpang tindih yang menyatu */
     margin-left: -180px; 
 }
 
 .dekan-photo-box-um .dekan-photo {
     width: 100%; 
+    height: -100px; /* Nilai ini salah, seharusnya auto atau 100% */
+    /* Saya perbaiki height ke 100% agar foto mengisi box */
     height: 100%; 
-    object-fit: cover; /* Gunakan 'cover' agar foto mengisi penuh area (lebih menyatu) */
+    object-fit: cover; 
     display: block;
-    border-radius: 15px; /* Radius foto yang sama dengan kotak teks */
-    /* Shadow yang lebih kuat untuk menonjolkan foto */
+    border-radius: 15px; 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
-    /* Tambahkan border kuning solid di sekitar foto untuk menyatukan warna */
     border: 5px solid white; 
     outline: 5px solid var(--primary-yellow); 
 }
 
-/* Media Query (Responsif) */
-@media (max-width: 992px) {
-    /* ... kode media query untuk berita dan footer lainnya ... */
-
-    /* Layout Sambutan (Mobile/Tablet) */
-    .sambutan-container.um-surabaya-style {
-        flex-direction: column; 
-        gap: 0;
-    }
-    
-    .sambutan-text-um {
-        order: 2; 
-        flex-basis: 100%;
-        padding: 10px;
-        margin-top: 100px; /* Naikkan kotak teks agar sedikit tumpang tindih dengan foto di mobile */
-    }
-    
-    .dekan-photo-box-um {
-        order: 1; 
-        flex-basis: 100%;
-        max-width: 220px; /* Ukuran gambar di mobile */
-        height: 250px; 
-        margin: 0 auto; /* Reset margin negatif untuk mobile */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-}
-
 /* ---------------------------------------------------------------- */
-/* --- 4. Section Berita (Layout UNAND) --- */
+/* --- BERITA (UNAND Style) --- */
 /* ---------------------------------------------------------------- */
 
-/* Kontainer Utama: KIRI (Gambar) dan KANAN (Ringkasan) */
+
 .unand-news-layout {
     display: flex;
     gap: 30px;
     align-items: flex-start;
 }
 
-/* Kolom Kiri: Gambar Utama */
+
 .main-article-left {
     flex-basis: 65%; 
     max-width: 65%;
@@ -365,13 +387,11 @@ a {
     font-weight: 700;
 }
 
-/* Kolom Kanan: Ringkasan dan Dua Berita Kecil */
 .side-news-right {
     flex-basis: 35%; 
     max-width: 35%;
 }
 
-/* Styling untuk Ringkasan Berita Utama (Teks di Kanan) */
 .main-news-summary {
     margin-bottom: 30px;
     padding-bottom: 20px;
@@ -399,7 +419,6 @@ a {
     display: block;
 }
 
-/* Styling untuk Dua Berita Pendukung */
 .news-item-side {
     display: flex;
     gap: 15px;
@@ -433,17 +452,15 @@ a {
 }
 
 /* ---------------------------------------------------------------- */
-/* --- 5. Section Statistik/Angka (Gaya UM) --- */
+/* --- STATISTIK/ANGKA (Gaya UM) --- */
 /* ---------------------------------------------------------------- */
 #statistik {
-    /* Sesuaikan URL gambar Anda di sini */
     background: url('https://mipa.untan.ac.id/file/sejarah/e31f106634b62687c180d767b0f7ec48Galeri-Mipa-3.jpg') no-repeat center center/cover;
     position: relative;
     color: white; 
     padding: 100px 0; 
 }
 
-/* OVERLAY GELAP TRANSPARAN */
 #statistik::before {
     content: '';
     position: absolute;
@@ -460,22 +477,36 @@ a {
     z-index: 2;
 }
 
-#statistik .section-title {
-    color: white; 
-}
 
 #statistik .section-title::after {
     background-color: var(--primary-yellow);
 }
 
+/* Modifikasi pada style.css */
+
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* KUNCI PERUBAHAN: Menetapkan 3 kolom (3 kotak sejajar) */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
-/* KARTU STATISTIK DENGAN EFEK BLUR */
+/* Tambahkan Media Query untuk tampilan di perangkat seluler (opsional, tapi disarankan) */
+@media (max-width: 992px) {
+    .stats-grid {
+        /* Untuk tablet, ubah menjadi 2 kolom sejajar */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        /* Untuk ponsel, ubah kembali menjadi 1 kolom sejajar */
+        grid-template-columns: 1fr;
+    }
+}
+
 .stat-card {
     background-color: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(5px); 
@@ -505,7 +536,7 @@ a {
 }
 
 /* ---------------------------------------------------------------- */
-/* --- 6. FOOTER SECTION --- */
+/* --- FOOTER SECTION --- */
 /* ---------------------------------------------------------------- */
 #main-footer {
     background-color: var(--dark-blue);
@@ -580,7 +611,6 @@ a {
 /* --- Media Queries (Responsif) --- */
 
 @media (max-width: 992px) {
-    /* Layout Berita */
     .unand-news-layout {
         flex-direction: column;
     }
@@ -589,7 +619,6 @@ a {
         max-width: 100%;
     }
     
-    /* Layout Sambutan (Mobile/Tablet) */
     .sambutan-container.um-surabaya-style {
         flex-direction: column; 
         gap: 20px; 
@@ -606,11 +635,9 @@ a {
         flex-basis: 100%;
         max-width: 200px; 
         height: 250px; 
-        /* Reset margin negatif untuk mobile */
         margin: 0 auto; 
     }
     
-    /* Media Query lama untuk Sambutan yang sudah tidak relevan */
     .sambutan-container {
         flex-direction: column;
     }
@@ -648,4 +675,51 @@ a {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+}
+/* Tambahan Styling untuk Halaman Tentang Kami */
+
+.vision-mission-box h3 {
+    font-size: 1.5em; 
+    font-weight: 700;
+    color: var(--dark-blue);
+    position: relative;
+    padding-bottom: 5px; 
+    margin-bottom: 20px; 
+}
+
+.vision-mission-box h3::after {
+    content: '';
+    display: block;
+    width: 40px; 
+    height: 3px; 
+    background-color: var(--primary-yellow);
+    margin: 8px 0 0 0;
+    border-radius: 2px;
+}
+
+.vision-mission-box ul {
+    list-style: none; 
+    padding-left: 0;
+}
+
+.vision-mission-box ul li {
+    position: relative;
+    padding-left: 25px; 
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+.vision-mission-box ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-yellow);
+    border-radius: 2px; 
+}
+
+.vision-mission-box:not(:last-child) {
+    margin-bottom: 40px; 
 }
