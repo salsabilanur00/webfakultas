@@ -10,48 +10,18 @@
     
     <link rel="stylesheet" href="style.css"> 
 
-     <header id="full-hero-banner">
-    
-    <nav class="navbar-top-overlay">
-    <div class="container navbar-overlay-content">
-        
-        <div class="logo-overlay logo-left">
-            <img src="https://mipa.untan.ac.id/images/logo-mipa-dark.png" alt="Logo FMIPA UNTAN" style="height: 40px;">
-        </div>
-        
-        <ul class="nav-links-overlay simplified">
-            <li><a href="index.html" class="nav-item">Beranda</a></li>
-            <li><a href="tentang-kami.html" class="nav-item">Tentang Kami</a></li>
-            <li><a href="prodi-akreditasi.html" class="nav-item active">Program Studi</a></li>
-        </ul>
-        
-        <div class="utility-icons-right">
-            <a href="#" class="flag-icon"><i class="fas fa-globe"></i> ID</a> 
-            <a href="#" class="flag-icon"><i class="fas fa-globe"></i> EN</a> 
-            
-            <span class="separator">|</span>
-
-            <a href="#" class="social-icon" title="Twitter/X"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-        </div>
-        
-    </div>
-</nav>
-    <div class="hero-content-wrapper container">
-        <div class="hero-text">
-            <h1>Fakultas Matematika dan Ilmu Pengetahuan Alam</h1>
-            <h2>Universitas Tanjungpura</h2>
-            
-            </div>
-    </div>
-</header>
-<div class="after-hero-line"></div>
-    
     <style>
+        /* Variabel CSS harus didefinisikan di style.css. Diasumsikan sudah ada. */
+        /* Contoh:
+        :root {
+             --dark-blue: #0A3D62;
+             --primary-yellow: #FFC300;
+             --shadow-light: rgba(0,0,0,0.1);
+             --shadow-medium: rgba(0,0,0,0.15);
+        }
+        */
         .prodi-grid {
+            /* Menggunakan CSS Grid untuk tata letak kolom yang responsif */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -62,7 +32,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px var(--shadow-light);
             transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 5px solid var(--dark-blue);
+            border-left: 5px solid var(--dark-blue); /* Aksen warna FMIPA */
         }
         .prodi-card:hover {
             transform: translateY(-5px);
@@ -79,10 +49,13 @@
             font-weight: 700;
             font-size: 0.9em;
             margin-top: 5px;
+            text-transform: uppercase;
         }
+        /* Penanda Warna Akreditasi */
         .akreditasi-badge.A { background-color: #4CAF50; color: white; } /* Hijau */
         .akreditasi-badge.B { background-color: #2196F3; color: white; } /* Biru */
         .akreditasi-badge.Baik { background-color: var(--primary-yellow); color: var(--dark-blue); } 
+        
         .prodi-card .btn-secondary {
             margin-top: 15px;
             background-color: var(--primary-yellow);
@@ -91,7 +64,7 @@
             padding: 8px 15px;
         }
         .prodi-card .btn-secondary:hover {
-            background-color: var(--secondary-yellow);
+            background-color: var(--secondary-yellow); /* Diasumsikan secondary-yellow ada */
         }
         /* Responsif untuk Prodi Card */
         @media (max-width: 600px) {
@@ -103,103 +76,174 @@
 </head>
 <body>
 
-    <header id="top-banner">
-    </header>
-
-    <main>
-        
-        <section id="prodi-list" class="content-section light-grey-bg section-padded">
-            <div class="container">
-                <h2 class="section-title">Program Studi & Akreditasi</h2>
-                
-                <div class="prodi-grid">
-                    
-                    <div class="prodi-card" id="matematika">
-                        <h3>Matematika (S1)</h3>
-                        <p>Akreditasi: <span class="akreditasi-badge A">A</span></p>
-                        <p>Fokus pada Analisis Data, Statistika, dan Matematika Komputasi.</p>
-                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
-                    </div>
-                    
-                    <div class="prodi-card" id="fisika">
-                        <h3>Fisika (S1)</h3>
-                        <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
-                        <p>Spesialisasi di bidang Geofisika, Material, dan Instrumentasi Elektronika.</p>
-                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
-                    </div>
-                    
-                    <div class="prodi-card" id="kimia">
-                        <h3>Kimia (S1)</h3>
-                        <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
-                        <p>Mempelajari Kimia Analitik, Organik, dan bidang Kimia Lingkungan.</p>
-                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
-                    </div>
-                    
-                    <div class="prodi-card" id="biologi">
-                        <h3>Biologi (S1)</h3>
-                        <p>Akreditasi: <span class="akreditasi-badge Baik">Baik Sekali</span></p>
-                        <p>Fokus pada Konservasi Sumber Daya Hayati dan Biologi Molekuler.</p>
-                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
-                    </div>
-                    
-                    <div class="prodi-card" id="farmasi">
-                        <h3>Farmasi (S1)</h3>
-                        <p>Akreditasi: <span class="akreditasi-badge A">A</span></p>
-                        <p>Persiapan karir di industri farmasi, klinik, dan penelitian obat.</p>
-                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
-                    </div>
-                    
-                    <div class="prodi-card">
-                        <h3>Magister Biologi (S2)</h3>
-                        <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
-                        <p>Program lanjutan di bidang Keanekaragaman Hayati Tropis.</p>
-                        <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
+<header id="full-hero-banner">
     
-    <footer id="main-footer" class="content-section">
-        <div class="container footer-grid">
+    <nav class="navbar-top-overlay">
+        <div class="container navbar-overlay-content">
             
-            <div class="footer-col about-fmipa">
-                <h4>FMIPA UNTAN</h4>
-                <p>Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
-                <p>Kampus Universitas Tanjungpura</p>
-                <p>Jalan Prof. H. Anwar, Pontianak, 78124, Indonesia</p>
+            <div class="logo-overlay logo-left">
+                <img src="https://mipa.untan.ac.id/images/logo-mipa-dark.png" alt="Logo FMIPA UNTAN" style="height: 40px;">
             </div>
             
-            <div class="footer-col quick-links">
-                <h4>Link Cepat</h4>
-                <ul>
-                    <li><a href="#">Pendaftaran Mahasiswa</a></li>
-                    <li><a href="#">Pusat Penelitian</a></li>
-                    <li><a href="#">Jurnal Ilmiah</a></li>
-                    <li><a href="#">Peta Kampus</a></li>
-                </ul>
-            </div>
+            <ul class="nav-links-overlay simplified">
+                <li><a href="index.html" class="nav-item">Beranda</a></li>
+                <li><a href="tentang-kami.html" class="nav-item">Tentang Kami</a></li>
+                <li><a href="prodi-akreditasi.html" class="nav-item active">Program Studi</a></li>
+            </ul>
             
-            <div class="footer-col contact-info">
-                <h4>Hubungi Kami</h4>
-                <p>Email: dekanat@mipa.untan.ac.id</p>
-                <p>Telp: (0561) 740123</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
+            <div class="utility-icons-right">
+                <a href="#" class="flag-icon"><i class="fas fa-globe"></i> ID</a> 
+                <a href="#" class="flag-icon"><i class="fas fa-globe"></i> EN</a> 
+                
+                <span class="separator">|</span>
 
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2025 FMIPA Universitas Tanjungpura. All Rights Reserved.</p>
+                <a href="#" class="social-icon" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+            </div>
+            
+        </div>
+    </nav>
+    <div class="hero-content-wrapper container">
+        <div class="hero-text">
+            <h1>Program Studi & Akreditasi</h1>
+            <h2>Fakultas Matematika dan Ilmu Pengetahuan Alam</h2>
+        </div>
+    </div>
+</header>
+<div class="after-hero-line"></div>
+    
+<main>
+    
+    <section id="prodi-list" class="content-section light-grey-bg section-padded">
+        <div class="container">
+            <h2 class="section-title">Daftar Program Studi S-1 dan S-2</h2>
+            
+            <div class="prodi-grid">
+                
+                <div class="prodi-card" id="matematika">
+                    <h3>Matematika (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge A">A</span></p>
+                    <p>Fokus pada Aljabar, Analisis Matematika, dan Ilmu Dasar MIPA.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="statistika">
+                    <h3>Statistika (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge A">A</span></p>
+                    <p>Fokus pada Analisis Data, Data Science, dan Statistika Komputasi.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="rek-sistem-komputer">
+                    <h3>Rekayasa Sistem Komputer (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                    <p>Fokus pada IoT, Otomasi Industri, Jaringan, dan Engineering Sistem Komputer (RESISKOM).</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="fisika">
+                    <h3>Fisika (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                    <p>Spesialisasi di bidang Material, Instrumentasi Elektronika, dan Gelombang.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="geofisika">
+                    <h3>Geofisika (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                    <p>Kajian mendalam struktur dan komposisi bumi menggunakan prinsip fisika.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="kimia">
+                    <h3>Kimia (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                    <p>Mempelajari Kimia Analitik, Organik, dan bidang Kimia Lingkungan.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="biologi">
+                    <h3>Biologi (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge A">A</span></p>
+                    <p>Fokus pada Konservasi Sumber Daya Hayati dan Biologi Molekuler.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="sistem-informasi">
+                    <h3>Sistem Informasi (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                    <p>Pengembangan perangkat lunak, manajemen basis data, dan tata kelola IT.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="ilmu-kelautan">
+                    <h3>Ilmu Kelautan (S1)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                    <p>Kajian mendalam tentang ekosistem laut, biologi, dan konservasi pesisir.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+
+                <div class="prodi-card" id="magister-biologi">
+                    <h3>Magister Biologi (S2)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge B">B</span></p>
+                    <p>Program lanjutan di bidang Keanekaragaman Hayati Tropis dan Ekologi.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
+                <div class="prodi-card" id="magister-kimia">
+                    <h3>Magister Kimia (S2)</h3>
+                    <p>Akreditasi: <span class="akreditasi-badge Baik">Baik</span></p>
+                    <p>Program pascasarjana dengan fokus pada Kimia Bahan Alam dan Analisis.</p>
+                    <a href="#" class="btn-secondary">Lihat Detail Prodi</a>
+                </div>
+                
             </div>
         </div>
-    </footer>
+    </section>
+
+</main>
+    
+<footer id="main-footer" class="content-section">
+    <div class="container footer-grid">
+        
+        <div class="footer-col about-fmipa">
+            <h4>FMIPA UNTAN</h4>
+            <p>Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
+            <p>Kampus Universitas Tanjungpura</p>
+            <p>Jalan Prof. H. Anwar, Pontianak, 78124, Indonesia</p>
+        </div>
+        
+        <div class="footer-col quick-links">
+            <h4>Link Cepat</h4>
+            <ul>
+                <li><a href="#">Pendaftaran Mahasiswa</a></li>
+                <li><a href="#">Pusat Penelitian</a></li>
+                <li><a href="#">Jurnal Ilmiah</a></li>
+                <li><a href="#">Peta Kampus</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col contact-info">
+            <h4>Hubungi Kami</h4>
+            <p>Email: dekanat@mipa.untan.ac.id</p>
+            <p>Telp: (0561) 740123</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 FMIPA Universitas Tanjungpura. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
